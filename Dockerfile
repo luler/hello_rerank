@@ -1,5 +1,5 @@
 # 使用Python 3.11作为基础镜像
-FROM pytorch/torchserve:0.11.0-cpu
+FROM python:3.11-slim
 
 # 设置工作目录
 WORKDIR /app
