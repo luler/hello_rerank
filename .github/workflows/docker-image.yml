@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "bge-reranker-large-1k" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "bge-reranker-large-1k" ]
 
 jobs:
 
@@ -41,8 +41,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_USER }}/${{ env.REPO_NAME }}:latest-${{ env.DATE }}
-            ${{ secrets.DOCKER_USER }}/${{ env.REPO_NAME }}:latest
+            ${{ secrets.DOCKER_USER }}/${{ env.REPO_NAME }}:bge-reranker-large-1k-${{ env.DATE }}
+            ${{ secrets.DOCKER_USER }}/${{ env.REPO_NAME }}:bge-reranker-large-1k
 
       - name: Logout from Docker Hub
         run: docker logout
