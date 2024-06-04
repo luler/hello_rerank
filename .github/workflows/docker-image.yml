@@ -41,7 +41,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_USER }}/${{ env.REPO_NAME }}:-${{ env.DATE }}
+            ${{ secrets.DOCKER_USER }}/${{ env.REPO_NAME }}:latest-${{ env.DATE }}
             ${{ secrets.DOCKER_USER }}/${{ env.REPO_NAME }}:latest
 
       - name: Logout from Docker Hub
