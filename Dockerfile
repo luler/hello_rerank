@@ -17,12 +17,7 @@ COPY . .
 ENV MODEL_NAME=neofung/bge-reranker-large-1k
 
 # 下载模型
-RUN python -c "
-from transformers import AutoTokenizer;
-import os;
-model_name = os.environ.get('MODEL_NAME', 'neofung/bge-reranker-large-1k');
-tokenizer = AutoTokenizer.from_pretrained(model_name);
-"
+RUN python -c "from transformers import AutoTokenizer; import os; model_name = os.environ.get('MODEL_NAME', 'neofung/bge-reranker-large-1k'); tokenizer = AutoTokenizer.from_pretrained(model_name);"
 
 # 暴露端口
 EXPOSE 8000
